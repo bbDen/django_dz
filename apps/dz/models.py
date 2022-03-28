@@ -41,7 +41,7 @@ class Courier(models.Model):
 class Stuff(models.Model):
     name = models.CharField(max_length=100)
     position = models.CharField(max_length=100)
-    order = models.ManyToManyField(to=Order, on_delete=models.CASCADE())
+    order = models.ForeignKey(to=Order, on_delete=models.CASCADE())
 
     def new_name(self):
         name = input('Введите новое название')
